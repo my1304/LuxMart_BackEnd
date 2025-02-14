@@ -14,7 +14,7 @@ public class WebConfig implements WebMvcConfigurer {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/api/**")
-                        .allowedOrigins("https://luxmart.netlify.app", "http://localhost:3000")
+                        .allowedOrigins("https://luxmart.netlify.app", "https://67afcbbb0f57c8ad0b5b57e5--luxmart.netlify.app", "http://localhost:3000")
                         .allowedMethods("GET", "POST", "PUT", "DELETE")
                         .allowedHeaders("*")
                         .allowCredentials(true);
