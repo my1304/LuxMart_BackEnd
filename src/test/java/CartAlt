@@ -1,0 +1,78 @@
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  updateCartItem,
+  deleteItemFromCart,
+  selectCartItems,
+  fetchCartItemsByUser,
+} from "../../features/cart/cartSlice"; // Экшн для получения данных корзины
+import { useGetProductsByCartQuery } from "../../features/api/apiSlice"; // Для получения данных продуктов
+import { getProductById } from "../../features/products/productsSlice";
+
+const Cart = () => {
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector(({ user }) => user); // Получаем текущего пользователя
+  const cartItems = useSelector(selectCartItems); // Получаем данные корзины
+  const [products, setProducts] = useState([]); // Состояние для хранения продуктов
+
+  useEffect(() => {
+    if (currentUser) {
+      dispatch(fetchCartItemsByUser(currentUser.id)); // Загружаем данные корзины для текущего пользователя
+    }
+  }, [currentUser, dispatch]);
+
+  // Используем кастомный хук для получения данных продуктов по cartId
+  const { data: cartData, error: cartError } = useGetProductsByCartQuery(currentUser?.id);
+
+  // Сопоставляем данные продуктов с корзиной
+  useEffect(() => {
+    if (cartData) {
+      const productIds = cartData.map((item) => item.productId);
+      const fetchProducts = async () => {
+        try {
+          const productPromises = productIds.map((productId) =>
+            dispatch(getProductById(productId))
+          );
+          const productsData = await Promise.all(productPromises);
+          setProducts(productsData.map((item) => item.payload)); // Получаем продукты и сохраняем их
+        } catch (error) {
+          console.error("Error fetching products:", error);
+        }
+      };
+      fetchProducts();
+    }
+  }, [cartData, dispatch]);
+
+  // Функция изменения количества товаров в корзине
+  const changeQuantity = (cartItemId, quantity) => {
+    dispatch(updateCartItem({ cartItemId, updateCartItem: { quantity } }));
+  };
+
+  // Функция удаления товара из корзины
+  const removeItem = (cartItemId) => {
+    dispatch(deleteItemFromCart(cartItemId));
+  };
+
+  return (
+    <section>
+      <h2>Your Cart</h2>
+      {products.map((product) => {
+        const cartItem = cartItems.find((item) => item.productId === product.id);
+        if (!cartItem) return null;
+
+        return (
+          <div key={product.id}>
+            <h3>{product.title}</h3>
+            <p>Price: {cartItem.price}$</p>
+            <p>Quantity: {cartItem.quantity}</p>
+            <button onClick={() => changeQuantity(cartItem.id, cartItem.quantity + 1)}>+</button>
+            <button onClick={() => changeQuantity(cartItem.id, cartItem.quantity - 1)}>-</button>
+            <button onClick={() => removeItem(cartItem.id)}>Remove</button>
+          </div>
+        );
+      })}
+    </section>
+  );
+};
+
+export default Cart;
