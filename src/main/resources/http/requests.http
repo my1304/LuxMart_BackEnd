@@ -10,6 +10,14 @@ Content-Type: application/json
   "password": "Qwerty!123",
   "avatar_path": "https://twam.ru/wp-content/uploads/2024/03/peshka-s-teniu-korolia-1.webp"
 }
+### user registration
+POST https://luxmart1.netlify.app/auth/login
+Content-Type: application/json
+
+{
+  "email": "slav@mail.com",
+  "password": "Qwerty!123",
+}
 
 ### user registration
 POST http://localhost:8080/auth/login
