@@ -74,11 +74,15 @@ public class AuthController {
             Cookie cookieAccess = new Cookie("Access-Token", tokenDto.getAccessToken());
             cookieAccess.setPath("/");
             cookieAccess.setHttpOnly(true);
+            cookieAccess.setSecure(true); // Должно быть true, если HTTPS
+            cookieAccess.setAttribute("SameSite", "None"); // Разрешает передачу куков между доменами
             response.addCookie(cookieAccess);
 
             Cookie cookieRefresh = new Cookie("Refresh-Token", tokenDto.getRefreshToken());
             cookieRefresh.setPath("/");
             cookieRefresh.setHttpOnly(true);
+            cookieRefresh.setSecure(true);
+            cookieRefresh.setAttribute("SameSite", "None");
             response.addCookie(cookieRefresh);
 
             return ResponseEntity.ok(tokenDto);
