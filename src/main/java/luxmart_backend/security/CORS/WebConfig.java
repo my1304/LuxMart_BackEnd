@@ -17,8 +17,8 @@ public class WebConfig implements WebMvcConfigurer {
                         .allowedOrigins("https://luxmart1.netlify.app", "http://localhost:3000")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                         .allowedHeaders("*")
-                        .allowCredentials(true)
-                        .exposedHeaders("Set-Cookie");;
+                        .allowCredentials(true);
+//                        .exposedHeaders("Set-Cookie");
             }
         };
     }
