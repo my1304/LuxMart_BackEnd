@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 @Tag(name = "Authorization controller", description = "Controller for security operations, login/logout, getting new tokens etc")
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin(origins = "https://luxmart1.netlify.app")  // Разрешаем фронтенд
+@CrossOrigin(origins = "https://luxmart.netlify.app")  // Разрешаем фронтенд
 public class AuthController {
 
     private final AuthService authService;
