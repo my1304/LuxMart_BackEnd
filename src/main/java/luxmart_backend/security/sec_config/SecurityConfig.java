@@ -39,13 +39,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
-                .requiresChannel(channel -> channel.anyRequest().requiresSecure()) // Принудительное использование HTTPS
-                .cors(cors -> cors.disable())
+               // .requiresChannel(channel -> channel.anyRequest().requiresSecure()) // Принудительное использование HTTPS
+              //  .cors(cors -> cors.disable())
                 .httpBasic(AbstractHttpConfigurer::disable)
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(x -> x.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(x -> x
-                        //access during development
+                         //access during development
                         .requestMatchers(HttpMethod.GET, "/swagger-ui/**", "/v3/api-docs/**").permitAll()
                         // Разрешаем доступ ко всем маршрутам, связанным с аутентификацией
                         .requestMatchers(HttpMethod.POST,  "/api/auth/login").permitAll()
