@@ -21,7 +21,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 @RestController
 @RequestMapping("/api/upload")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://luxmart.netlify.app")  // Разрешаем фронтенд
 @Tag(name = "File Upload Controller", description = "Endpoints for uploading files")
 public class FileUploadController {
     private static final long MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB

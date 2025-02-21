@@ -21,7 +21,7 @@ import java.util.Set;
 @Tag(name = "Product Controller", description = "Controller for managing products")
 @RestController
 @RequestMapping("/api/products")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://luxmart.netlify.app")  // Разрешаем фронтенд
 public class ProductController {
 
     private final ProductService productService;

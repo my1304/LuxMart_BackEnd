@@ -14,7 +14,7 @@ import java.util.List;
 @Tag(name = "Category Controller", description = "API for managing product categories")
 @RestController
 @RequestMapping("/api/categories")
-//@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://luxmart.netlify.app")  // Разрешаем фронтенд
 public class CategoryController {
 
     private final CategoryService categoryService;
