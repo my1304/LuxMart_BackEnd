@@ -1,0 +1,71 @@
+### Add user Slav
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "username": "Vyacheslav",
+  "firstName": "Vyacheslav",
+  "lastName": "Manschulow",
+  "email": "slav@mail.com",
+  "password": "Qwerty!123",
+  "avatar_path": "https://twam.ru/wp-content/uploads/2024/03/peshka-s-teniu-korolia-1.webp"
+}
+### user registration
+POST https://luxmart1.netlify.app/auth/login
+Content-Type: application/json
+
+{
+  "email": "slav@mail.com",
+  "password": "Qwerty!123",
+}
+
+### user registration
+POST http://localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "anatoli@mail.com",
+  "password": "Qwerty!007"
+}
+### Get all user
+GET http://localhost:8080/api/users/3
+Content-Type: application/json
+
+
+### Add user sasha.ivanov
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "username": "sasha.ivanov",
+  "firstName": "Sasha",
+  "lastName": "Ivanyo",
+  "email": "sasha@example.com",
+  "password": "Qwerty!123"
+ }
+
+### add Product to cart
+POST http://localhost:8080/api/cart
+Content-Type: application/json
+
+{
+  "userId": 5,
+  "productId": 4,
+  "quantity": 1000
+}
+### Update Product to cart
+PUT http://localhost:8080/api/cart/23
+Content-Type: application/json
+
+{
+  "quantity": 1000
+}
+
+### add CartToOrderByUser
+POST http://localhost:8080/api/cart/order/2
+Content-Type: application/json
+{
+}
+### Get all orders
+GET http://localhost:8080/api/order/1
+Content-Type: application/json

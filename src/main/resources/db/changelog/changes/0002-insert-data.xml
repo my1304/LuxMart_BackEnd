@@ -1,0 +1,237 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="0002-insert-data" author="luxmart" runOnChange="true">
+
+        <!-- Inserting Categories -->
+        <insert tableName="categories">
+            <column name="id" value="1"/>
+            <column name="name" value="Games"/>
+            <column name="image" value="https://th.bing.com/th/id/R.68bdc14b12eb891b8fedbbd862cf15b4?rik=6D5gDBOy6sLKbgpid=ImgRawr=0"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="2"/>
+            <column name="name" value="Electronics"/>
+            <column name="image" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="3"/>
+            <column name="name" value="Fitness"/>
+            <column name="image" value="https://www.sbsmobile.com/por/234394-thickbox_default/vital-fit-de.jpg"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="4"/>
+            <column name="name" value="Computers"/>
+            <column name="image" value="https://m.media-amazon.com/images/I/714sa4fUFNL._AC_UF894,1000_QL80_.jpg"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="5"/>
+            <column name="name" value="Gadgets"/>
+            <column name="image" value="https://m.media-amazon.com/images/I/71ZRus2YNcL._AC_UF894,1000_QL80_.jpg"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="6"/>
+            <column name="name" value="Gaming Consoles"/>
+            <column name="image" value="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_141517940?x=1800y=1800format=jpgquality=80sp=yesstrip=yesex=1800ey=1800align=centerresizesourceunsharp=1.5x1+0.7+0.02"/>
+        </insert>
+        <insert tableName="categories">
+            <column name="id" value="7"/>
+            <column name="name" value="Sales"/>
+            <column name="image" value="https://i.otto.de/i/otto/f0b12f2a-3638-43b2-9ceb-e686e95410d9?w=1078h=1078"/>
+        </insert>
+
+        <!-- Inserting Products -->
+        <insert tableName="products">
+            <column name="title" value="Socks"/>
+            <column name="price" value="15.00"/>
+            <column name="description" value="Short socks"/>
+            <column name="category_id" value="1"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Gamepad"/>
+            <column name="price" value="35.00"/>
+            <column name="description" value="White Xbox"/>
+            <column name="category_id" value="1"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Wireless Mouse"/>
+            <column name="price" value="25.99"/>
+            <column name="description" value="Ergonomic wireless mouse with customizable buttons."/>
+            <column name="category_id" value="1"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Bluetooth Speaker"/>
+            <column name="price" value="49.99"/>
+            <column name="description" value="Portable Bluetooth speaker with rich bass and long battery life."/>
+            <column name="category_id" value="1"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Mechanical Keyboard"/>
+            <column name="price" value="89.99"/>
+            <column name="description" value="Mechanical keyboard with RGB lighting and blue switches."/>
+            <column name="category_id" value="1"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="USB-C Hub"/>
+            <column name="price" value="39.99"/>
+            <column name="description" value="7-in-1 USB-C hub with HDMI, USB 3.0, and SD card reader."/>
+            <column name="category_id" value="2"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Smart Thermostat"/>
+            <column name="price" value="149.99"/>
+            <column name="description" value="Smart thermostat with remote control via smartphone app."/>
+            <column name="category_id" value="2"/>
+        </insert>
+        <insert tableName="products">
+            <column name="title" value="Gaming Headset"/>
+            <column name="price" value="79.99"/>
+            <column name="description" value="Surround sound gaming headset with noise-cancelling microphone."/>
+            <column name="category_id" value="2"/>
+        </insert>
+
+        <!-- Inserting Pictures -->
+        <!-- Product: Socks -->
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/81pqiCKKnxL._AC_SX569_.jpg"/>
+            <column name="product_id" value="1"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/71kS2xth9HL._AC_SY879_.jpg"/>
+            <column name="product_id" value="1"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/71kS2xth9HL._AC_SY879_.jpg"/>
+            <column name="product_id" value="1"/>
+        </insert>
+
+        <!-- Product: Gamepad -->
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="2"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="2"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="2"/>
+        </insert>
+
+        <!-- Product: Wireless Mouse -->
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/51KmxQjXBlL._AC_UF1000,1000_QL80_.jpg"/>
+            <column name="product_id" value="3"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/51KmxQjXBlL._AC_UF1000,1000_QL80_.jpg"/>
+            <column name="product_id" value="3"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/51KmxQjXBlL._AC_UF1000,1000_QL80_.jpg"/>
+            <column name="product_id" value="3"/>
+        </insert>
+
+        <!-- Product: Bluetooth Speaker -->
+        <insert tableName="pictures">
+            <column name="url" value="https://www.artis.in/cdn/shop/products/1_96dd2244-53f4-449d-bf8e-4ac1bad9f490.jpg?v=1653639739"/>
+            <column name="product_id" value="4"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://www.artis.in/cdn/shop/products/1_96dd2244-53f4-449d-bf8e-4ac1bad9f490.jpg?v=1653639739"/>
+            <column name="product_id" value="4"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://www.artis.in/cdn/shop/products/1_96dd2244-53f4-449d-bf8e-4ac1bad9f490.jpg?v=1653639739"/>
+            <column name="product_id" value="4"/>
+        </insert>
+
+        <!-- Product: Mechanical Keyboard -->
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/71ZRus2YNcL._AC_UF894,1000_QL80_.jpg"/>
+            <column name="product_id" value="5"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/71ZRus2YNcL._AC_UF894,1000_QL80_.jpg"/>
+            <column name="product_id" value="5"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/71ZRus2YNcL._AC_UF894,1000_QL80_.jpg"/>
+            <column name="product_id" value="5"/>
+        </insert>
+
+        <!-- Product: USB-C Hub -->
+        <insert tableName="pictures">
+            <column name="url" value="https://media.startech.com/cms/products/gallery_large/5g4ab-usb-c-hub._main.jpg"/>
+            <column name="product_id" value="6"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://media.startech.com/cms/products/gallery_large/5g4ab-usb-c-hub._main.jpg"/>
+            <column name="product_id" value="6"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://media.startech.com/cms/products/gallery_large/5g4ab-usb-c-hub._main.jpg"/>
+            <column name="product_id" value="6"/>
+        </insert>
+
+        <!-- Product: Smart Thermostat -->
+        <insert tableName="pictures">
+            <column name="url" value="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_103722491?x=1800y=1800format=jpgquality=80sp=yesstrip=yesex=1800ey=1800align=centerresizesourceunsharp=1.5x1+0.7+0.02"/>
+            <column name="product_id" value="7"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_103722491?x=1800y=1800format=jpgquality=80sp=yesstrip=yesex=1800ey=1800align=centerresizesourceunsharp=1.5x1+0.7+0.02"/>
+            <column name="product_id" value="7"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_103722491?x=1800y=1800format=jpgquality=80sp=yesstrip=yesex=1800ey=1800align=centerresizesourceunsharp=1.5x1+0.7+0.02"/>
+            <column name="product_id" value="7"/>
+        </insert>
+
+        <!-- Product: Gaming Headset -->
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="8"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="8"/>
+        </insert>
+        <insert tableName="pictures">
+            <column name="url" value="https://m.media-amazon.com/images/I/31XIqfc70vL._SY300_SX300_QL70_ML2_.jpg"/>
+            <column name="product_id" value="8"/>
+        </insert>
+
+        <!--        &lt;!&ndash; Вставка пользователей с ролями &ndash;&gt;-->
+        <!--        <insert tableName="users">-->
+        <!--            <column name="id" value="1"/>-->
+        <!--            <column name="first_name" value="John"/>-->
+        <!--            <column name="last_name" value="Doe"/>-->
+        <!--            <column name="email" value="john.doe@example.com"/>-->
+        <!--            <column name="password" value="$2a$12$Stwc/gZiPyiFTnVJ0PrHauBHDMLMQ4yY9eMXr59mU8bEg9i7Es/bm"/>-->
+        <!--            <column name="username" value="johndoe"/>-->
+        <!--        </insert>-->
+        <!--        <insert tableName="users">-->
+        <!--            <column name="id" value="2"/>-->
+        <!--            <column name="first_name" value="Jane"/>-->
+        <!--            <column name="last_name" value="Smith"/>-->
+        <!--            <column name="email" value="jane.smith@example.com"/>-->
+        <!--            <column name="password" value="$2a$12$tBN00BEeE5UD8zzxsQKhqucsBwybI6WxySdc4vUeVJrucyobH0GE2"/>-->
+        <!--            <column name="username" value="janesmith"/>-->
+        <!--        </insert>-->
+
+        <!--        &lt;!&ndash; Связь пользователей с ролями &ndash;&gt;-->
+        <!--        <insert tableName="users_roles">-->
+        <!--            <column name="user_id" value="1"/>-->
+        <!--            <column name="role_id" value="2"/>-->
+        <!--        </insert>-->
+        <!--        <insert tableName="users_roles">-->
+        <!--            <column name="user_id" value="2"/>-->
+        <!--            <column name="role_id" value="2"/>-->
+        <!--        </insert>-->
+
+    </changeSet>
+</databaseChangeLog>
